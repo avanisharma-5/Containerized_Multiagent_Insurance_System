@@ -1,0 +1,15 @@
+# Secrets
+backend/.env
+
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Runtime/generated data
+backend/uploads/
+backend/data/generated_images/
+backend/vector_store/
+
+# Node
+node_modules/
