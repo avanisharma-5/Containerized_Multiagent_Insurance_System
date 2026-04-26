@@ -42,8 +42,8 @@ jobs:
           context: .
           push: true
           tags: |
-            yourusername/insurance-assistant:latest
-            yourusername/insurance-assistant:${{ github.sha }}
+            avanis55/insurance-assistant:latest
+            avanis55/insurance-assistant:${{ github.sha }}
 
   deploy:
     needs: build-and-push
@@ -59,7 +59,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             # Pull latest image
-            docker pull yourusername/insurance-assistant:latest
+            docker pull avanis55/insurance-assistant:latest
             
             # Stop and remove old container
             docker stop insurance-app || true
@@ -74,6 +74,6 @@ jobs:
               -e GROQ_API_KEY="${{ secrets.GROQ_API_KEY }}" \
               -e SERPAPI_API_KEY="${{ secrets.SERPAPI_API_KEY }}" \
               -e HF_API_TOKEN="${{ secrets.HF_API_TOKEN }}" \
-              yourusername/insurance-assistant:latest
+              avanis55/insurance-assistant:latest
               
             echo "Deployment complete! Frontend: http://$(curl -s ifconfig.me):8501"
