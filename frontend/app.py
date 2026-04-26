@@ -592,7 +592,7 @@ def main() -> None:
 
     init_state()
 
-    # Use default backend URL without sidebar input
+    # Use default backend URL without sidebar input 
     base_url = DEFAULT_API_BASE
 
     chat_tab, compare_tab = st.tabs(["Chat", "Compare policies"])
