@@ -558,18 +558,7 @@ def render_comparison_tab(base_url: str) -> None:
         st.subheader("Policy Comparison Report")
         st.markdown(report)
     
-    # Show structured data for reference
-    with st.expander("Raw Policy Data (JSON)"):
-        pol_a = result.get("policy_a", {})
-        pol_b = result.get("policy_b", {})
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            st.write("**Policy A**")
-            st.json(pol_a)
-        with col2:
-            st.write("**Policy B**")
-            st.json(pol_b)
+    
 
     # ── Reset ──────────────────────────────────────────────────────────────────
     if st.button("Clear & compare again", key="cmp_reset"):

@@ -17,8 +17,7 @@ router = APIRouter()
 settings = load_settings()
 _uploads_dir = (BASE_DIR / settings.uploads_dir).resolve()
 _uploads_dir.mkdir(parents=True, exist_ok=True)
-_charts_dir = (BASE_DIR / "data" / "comparison_charts").resolve()
-_charts_dir.mkdir(parents=True, exist_ok=True)
+
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -129,11 +128,3 @@ async def run_comparison(
         status="completed",
     )
 
-
-@router.get("/charts/{filename}")
-def serve_chart(filename: str):
-    # Prevent path traversal
-    chart_path = (_charts_dir / Path(filename).name).resolve()
-    if not chart_path.exists():
-        raise HTTPException(status_code=404, detail=f"Chart not found: {filename}")
-    return FileResponse(path=str(chart_path), media_type="image/png")
