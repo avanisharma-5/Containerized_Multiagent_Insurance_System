@@ -41,6 +41,7 @@ jobs:
         with:
           context: .
           push: true
+          no-cache: true
           tags: |
             avanis55/insurance-assistant:latest
             avanis55/insurance-assistant:${{ github.sha }}
@@ -59,7 +60,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             # Pull latest image
-            docker pull avanis55/insurance-assistant:latest
+            docker pull avanis55/insurance-assistant:${{ github.sha }}
             
             # Stop and remove old container
             docker stop insurance-app || true
