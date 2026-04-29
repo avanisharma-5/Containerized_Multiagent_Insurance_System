@@ -13,9 +13,4 @@ chromadb
 pypdf
 serpapi
 streamlit
-
-# Force CPU-only torch
-torch --index-url https://download.pytorch.org/whl/cpu
-
-# Keep sentence transformers AFTER torch
 sentence-transformers
