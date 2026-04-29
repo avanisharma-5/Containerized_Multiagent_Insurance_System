@@ -14,11 +14,7 @@ from io import BytesIO
 from pathlib import Path
 from typing import Any
 
-# import matplotlib
-# matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-# import numpy as np
+
 from crewai import Agent, Task, Crew, Process
 from crewai.tools import BaseTool
 from langchain_groq import ChatGroq
