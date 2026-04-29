@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from crewai import Agent
 from crewai.tools import BaseTool
-from langchain_groq import ChatGroq
 
 from .config import load_settings
 
@@ -20,13 +19,10 @@ class InsuranceKnowledgeSearchTool(BaseTool):
         return self.evidence_seed or "No evidence provided."
 
 
-def build_llm() -> ChatGroq:
+def build_llm() -> str:
+    
     settings = load_settings()
-    return ChatGroq(
-        model=settings.groq_model,
-        temperature=0.2,
-        api_key=settings.groq_api_key,
-    )
+    return f"groq/{settings.groq_model}"
 
 
 def build_agents(evidence_seed: str = "") -> tuple[Agent, Agent]:
