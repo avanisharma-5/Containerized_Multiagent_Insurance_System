@@ -29,3 +29,6 @@ serpapi
 streamlit
 
 sentence-transformers
+
+crewai[litellm]
+litellm
