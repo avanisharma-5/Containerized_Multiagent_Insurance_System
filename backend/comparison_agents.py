@@ -19,7 +19,6 @@ from crewai import Agent, Task, Crew, Process
 from crewai.tools import BaseTool
 from langchain_groq import ChatGroq
 
-
 # ─────────────────────────────────────────────────────────────────────────────
 # Helpers
 # ─────────────────────────────────────────────────────────────────────────────
