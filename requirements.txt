@@ -28,4 +28,4 @@ serpapi
 
 streamlit
 
-sentence-transformers-transformers
+sentence-transformers
